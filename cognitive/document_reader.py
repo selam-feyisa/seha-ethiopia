@@ -1,51 +1,36 @@
 import os
-from azure.ai.documentintelligence import DocumentIntelligenceClient
-from azure.core.credentials import AzureKeyCredential
-from openai import AzureOpenAI
 import json
+from dotenv import load_dotenv
 
-# ============================================================
-# SETUP CLIENTS
-# ============================================================
-
-doc_client = DocumentIntelligenceClient(
-    endpoint=os.getenv("AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT"),
-    credential=AzureKeyCredential(os.getenv("AZURE_DOCUMENT_INTELLIGENCE_KEY"))
-)
-
-openai_client = AzureOpenAI(
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_KEY"),
-    api_version="2024-02-01"
-)
-
-# ============================================================
-# ANALYZE DOCUMENT
-# ============================================================
+load_dotenv()
 
 def analyze_document(blob_url: str) -> dict:
-    """
-    Takes a blob URL of a medical document.
-    Extracts text and tables using Azure Document Intelligence.
-    Then summarizes with GPT-4o.
-    Returns structured JSON.
-    """
+    from azure.ai.documentintelligence import DocumentIntelligenceClient
+    from azure.core.credentials import AzureKeyCredential
+    from openai import AzureOpenAI
 
-    # Step 1: Extract text with Document Intelligence
+    doc_client = DocumentIntelligenceClient(
+        endpoint=os.getenv("AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT"),
+        credential=AzureKeyCredential(os.getenv("AZURE_DOCUMENT_INTELLIGENCE_KEY"))
+    )
+    openai_client = AzureOpenAI(
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        api_key=os.getenv("AZURE_OPENAI_KEY"),
+        api_version="2024-02-01"
+    )
+
     poller = doc_client.begin_analyze_document(
         model_id="prebuilt-layout",
         body={"urlSource": blob_url}
     )
     result = poller.result()
 
-    # Collect all text
     full_text = ""
     for page in result.pages:
         for line in page.lines:
-            if len(line.content) > 30:  # skip headers/footers
+            if len(line.content) > 30:
                 full_text += line.content + "\n"
 
-    # Collect tables
     tables = []
     for table in result.tables:
         rows = {}
@@ -55,13 +40,11 @@ def analyze_document(blob_url: str) -> dict:
             rows[cell.row_index].append(cell.content)
         tables.append(list(rows.values()))
 
-    # Truncate if too long
     if len(full_text) > 10000:
         full_text = full_text[:10000] + "\n...[truncated]"
 
     pages_analyzed = len(result.pages)
 
-    # Step 2: Summarize with GPT-4o
     prompt = f"""
 You are a medical document analyst for Ethiopian healthcare.
 Analyze this medical document and return a JSON object with:
@@ -83,19 +66,11 @@ Return ONLY valid JSON, no markdown, no explanation.
     )
 
     raw = response.choices[0].message.content.strip()
-
     try:
         parsed = json.loads(raw)
     except Exception:
-        parsed = {
-            "summary": raw,
-            "patient_info": None,
-            "key_findings": [],
-            "abnormal_values": []
-        }
+        parsed = {"summary": raw, "patient_info": None, "key_findings": [], "abnormal_values": []}
 
-    # Add metadata
     parsed["pages_analyzed"] = pages_analyzed
     parsed["tables"] = tables
-
     return parsed
