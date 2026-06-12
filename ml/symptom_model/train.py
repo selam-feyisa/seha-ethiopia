@@ -10,6 +10,8 @@ Dataset Structure:
 """
 
 import pandas as pd
+import joblib
+
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -180,3 +182,16 @@ print(grid_search.best_params_)
 
 print("\nBest Cross Validation Score:")
 print(grid_search.best_score_)
+
+
+# Save best model (Random Forest from GridSearch or rf)
+joblib.dump(rf, "symptom_model.pkl")
+
+print("\nModel saved as symptom_model.pkl")
+
+
+best_model = grid_search.best_estimator_
+
+joblib.dump(best_model, "ml/symptom_model/symptom_model.pkl")
+
+print("Best model saved to ml/symptom_model/symptom_model.pkl")
