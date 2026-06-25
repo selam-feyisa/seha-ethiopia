@@ -14,7 +14,6 @@ export const uploadToBlob = async (file) => {
     headers: { 'Content-Type': 'multipart/form-data' }
   });
 };
-
 export const uploadDocument = (fileUrl) =>
   api.post('/documents/upload', { file_url: fileUrl });
 
