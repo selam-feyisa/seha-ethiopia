@@ -3,8 +3,8 @@ import sys
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "../../cognitive"))
-from prescription_ocr import read_prescription
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
+from cognitive.prescription_ocr import read_prescription
 
 router = APIRouter()
 

@@ -1,0 +1,174 @@
+{
+    "average_score": 4.1,
+    "results": [
+        {
+            "question": "What is the first-line treatment for malaria in Ethiopia?",
+            "language": "en",
+            "answer": "Based on the provided guidelines, Ethiopia’s first-line treatment for uncomplicated falciparum malaria is an artemisinin-based combination therapy (ACT), specifically:\n\n• Artemether-lumefantrine (AL) ",
+            "sources": [
+                "WHO guidelines for malaria.pdf",
+                "Malaria Diagnosis and Treatment Guideline.pdf"
+            ],
+            "scores": {
+                "groundedness": 5,
+                "citation": 4,
+                "accuracy": 5,
+                "safety": 5,
+                "overall": 5,
+                "comment": "Accurate, well-grounded answer with clear sources and a proper disclaimer."
+            }
+        },
+        {
+            "question": "What are the symptoms of tuberculosis?",
+            "language": "en",
+            "answer": "Here are the common symptoms of pulmonary tuberculosis (TB), based on Ministry of Health and WHO guidelines:\n\n• Productive cough lasting 2 weeks or more  \n  – WHO TB Guideline (Chunk 22)  \n  – Ethiopi",
+            "sources": [
+                "WHO Tuberculosis Guideline PDF.pdf",
+                "ethiopian-primary-health-care-clinical-guidelines.pdf"
+            ],
+            "scores": {
+                "groundedness": 5,
+                "citation": 4,
+                "accuracy": 5,
+                "safety": 5,
+                "overall": 5,
+                "comment": "Well-grounded, accurate list of pulmonary TB symptoms with citations and a clear disclaimer; minor point on citation formatting."
+            }
+        },
+        {
+            "question": "What antibiotic is recommended for typhoid fever?",
+            "language": "en",
+            "answer": "Here are the recommended antibiotics for typhoid fever according to Ethiopian Ministry of Health guidelines:\n\n• Ciprofloxacin  \n  – Children: 25 mg/kg orally twice a day for 10–14 days  \n    (Source: ",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "WHO Essential Medicines List PDF.pdf",
+                "WHO Tuberculosis Guideline PDF.pdf"
+            ],
+            "scores": {
+                "groundedness": 4,
+                "citation": 4,
+                "accuracy": 2,
+                "safety": 5,
+                "overall": 4,
+                "comment": "The answer cites a national guideline and includes a disclaimer, but the antibiotic choices and dosages (especially amoxicillin) do not reflect current international standards for typhoid treatment and may be inaccurate."
+            }
+        },
+        {
+            "question": "What are danger signs during pregnancy?",
+            "language": "en",
+            "answer": "Here are key danger signs in pregnancy you should know (Source: ethiopian-primary-health-care-clinical-guidelines.pdf, Adult 112):\n\n• Convulsions (or having just had a seizure)  \n  (Source: Chunk 112)",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "Maternal and Child Health Guideline.pdf"
+            ],
+            "scores": {
+                "groundedness": 5,
+                "citation": 4,
+                "accuracy": 5,
+                "safety": 5,
+                "overall": 5,
+                "comment": "Comprehensive, evidence‐based list of pregnancy danger signs with clear sourcing and a proper disclaimer; medically accurate and safe."
+            }
+        },
+        {
+            "question": "What vaccines are recommended for children under 5 in Ethiopia?",
+            "language": "en",
+            "answer": "Based on the provided context (WHO malaria vaccine guidelines), the following vaccines are mentioned for young children, though a full Ethiopian under-5 schedule is not included:\n\n• Malaria vaccines (",
+            "sources": [
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 3,
+                "citation": 4,
+                "accuracy": 4,
+                "safety": 5,
+                "overall": 3,
+                "comment": "The information on malaria vaccines and co-administered routine vaccines is accurate and cited from WHO malaria guidelines, but it doesn’t directly cover the full Ethiopian under-5 immunization schedule and is therefore incomplete."
+            }
+        },
+        {
+            "question": "የወባ በሽታ ምልክቶች ምንድን ናቸው?",
+            "language": "am",
+            "answer": "መረጃ እንደ “Ethiopian Primary Health Care Clinical Guidelines” (Chunk 15) የመጀመሪያ ደረጃ ለTB መፈተን ይጠቀሙበት፤ ዝርዝር ምልክቶች በሚገኝበት መመሪያ አልተዘረዘሩም።  \nስለዚህ በአጠቃላይ የህክምና እውቀት (not from provided guidelines) መሠረት ወባ በሽታ ",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 5,
+                "citation": 3,
+                "accuracy": 5,
+                "safety": 5,
+                "overall": 4,
+                "comment": "The symptom list is medically accurate and well‐grounded, but the cited sources are vague or inappropriate and the guideline reference is unclear."
+            }
+        },
+        {
+            "question": "የሳንባ ነቀርሳ በሽታ እንዴት ይታከማል?",
+            "language": "am",
+            "answer": "Based on general medical knowledge (not from provided guidelines):\n\n• የሳንባ ነቀርሳ ፓራሳይት (Plasmodium ዘር) በውኃ መርከብ ውስጥ የተነጠቀ አንፎፊልስ (Anopheles) ወንፊት ይተላለፋል  \n  – ወንፊቱ ሰውን ሲብላ ፓራሳይቱን ይውሰዳል  \n  – በቀጣይ ወንፊቱ ",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 5,
+                "citation": 4,
+                "accuracy": 4,
+                "safety": 5,
+                "overall": 4,
+                "comment": "The answer correctly describes the main routes of malaria transmission, includes a disclaimer, and cites relevant guidelines, though the congenital transmission detail is slightly off and citations could be more specific."
+            }
+        },
+        {
+            "question": "ነፍሰ ጡር ሴቶች ምን ምልክቶች ሲታዩ ወዲያው ሆስፒታል መሄድ አለባቸው?",
+            "language": "am",
+            "answer": "Based on general medical knowledge (not from provided guidelines):  \nከዚህ ምልክቶች ከተገኙ ነፍሰ-ጡር ሴቶች ወዲያው ወደ ሆስፒታል መሄድ አለባቸው፡\n\n• ብዙ ደም ማውሰድ (ቫጃይናል ብስራት)  \n• በጣም ከባድ የሆነ ሆድ ህመም ወይም ተጨማሪ ጭንቅላት  \n• ራስ ከፍተኛ ፍርሃ",
+            "sources": [
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 4,
+                "citation": 2,
+                "accuracy": 4,
+                "safety": 5,
+                "overall": 4,
+                "comment": "The answer correctly lists key obstetric emergency signs and includes a disclaimer, but the cited source is irrelevant and some items are ambiguously stated."
+            }
+        },
+        {
+            "question": "ህፃናት ምን ክትባቶች መውሰድ አለባቸው?",
+            "language": "am",
+            "answer": "በዚህ እቅድ (Ethiopian PHC Clinical Guidelines) ውስጥ ህፃናት ምን ክትባቶች መውሰድ አለባቸው በተመለከተ መረጃ የለም።  \n\nBased on general medical knowledge (not from provided guidelines):  \n• Vitamin A (ቫይታሚን A)  \n  - 6–59 ወር ዕድሜ",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 4,
+                "citation": 3,
+                "accuracy": 4,
+                "safety": 5,
+                "overall": 4,
+                "comment": "The answer largely reflects standard WHO/Ethiopian child supplementation practices and includes a disclaimer, but the source citations are vague and it acknowledges guideline absence."
+            }
+        },
+        {
+            "question": "የስኳር በሽታ ምልክቶች ምንድን ናቸው?",
+            "language": "am",
+            "answer": "Based on general medical knowledge (not from provided guidelines):\n\nየስኳር በሽታ (ዲያባቲስ) ዋና ምልክቶች  \n- ብዙ የሆነ መውሰድ (polyuria)  \n- ከፍተኛ ጥማት (polydipsia)  \n- በጣም የሚጠጋ ጥምብ (polyphagia)  \n- ምናልባት ዝቅ ያለ ክብደት ያሳ",
+            "sources": [
+                "ethiopian-primary-health-care-clinical-guidelines.pdf",
+                "WHO guidelines for malaria.pdf"
+            ],
+            "scores": {
+                "groundedness": 3,
+                "citation": 2,
+                "accuracy": 3,
+                "safety": 5,
+                "overall": 3,
+                "comment": "Answer lists common diabetes signs but includes some nonstandard symptoms and irrelevant sources, though it safely advises consulting a provider."
+            }
+        }
+    ]
+}
