@@ -1,7 +1,12 @@
 import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
-const api = axios.create({ baseURL: API_URL });
+const API_KEY = process.env.REACT_APP_API_KEY || '';
+
+const api = axios.create({
+  baseURL: API_URL,
+  headers: API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {},
+});
 
 export const checkSymptoms = (symptoms) =>
   api.post('/symptoms/check', { symptoms });
@@ -30,7 +35,10 @@ export const askSehaStream = async (question, language, { onMeta, onToken, onDon
   try {
     const response = await fetch(`${API_URL}/ask/stream`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {}),
+      },
       body: JSON.stringify({ question, language }),
     });
 
