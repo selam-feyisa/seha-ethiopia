@@ -15,3 +15,6 @@ xgboost
 shap
 pytest
 httpx
+slowapi
+azure-identity
+azure-keyvault-secrets
