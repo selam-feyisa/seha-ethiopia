@@ -25,3 +25,16 @@ An AI-powered healthcare assistant built for Ethiopia.
 | Azure Document Intelligence | Medical document analysis |
 | Azure Blob Storage | MoH PDF document storage |
 | Azure AI Search | Vector search for RAG |
+## 🚀 Local Setup Instructions
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- Azure account (university) with resources created (see Fayza)
+
+### Backend Setup
+```bash
+cd backend
+cp .env.example .env          # Fill in your keys
+pip install -r requirements.txt
+uvicorn main:app --reload
